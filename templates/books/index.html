@@ -1,0 +1,26 @@
+<h1>Library Schmibrary</h1>
+<hr>
+<h3 ng-repeat="book in allBooks">
+  {{ book.author }}'s <a ng-href="/books/{{book._id}}">{{ book.title }}</a>
+</h3>
+<hr>
+<button class="btn btn-primary btn-block" ng-click="addBookForm=true" ng-hide="addBookForm">Add a Book</button>
+<div ng-show="addBookForm">
+  <h1>Add New Book</h1>
+  <form ng-submit="saveBook()">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="newBook.title" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="newBook.author" placeholder="Author">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="newBook.image" placeholder="Image URL">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="newBook.releaseDate" placeholder="Release Date">
+    </div>
+    <input type="submit" class="btn btn-primary btn-block">
+  </form>
+</div>
+
